@@ -19,7 +19,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8080/api/users/register", form);
+      await axios.post("https://task-management-system-xx1b.onrender.com/api/users/register", form);
       toast.success("Registered successfully!");
       setTimeout(() => navigate("/login"), 2000);
     } catch (err) {

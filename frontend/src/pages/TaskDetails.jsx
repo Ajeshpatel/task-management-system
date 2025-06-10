@@ -14,7 +14,7 @@ const TaskDetails = () => {
   useEffect(() => {
     const fetchTask = async () => {
       try {
-        const res = await axios.get(`https://task-management-system-frontend-c0pn.onrender.com/api/tasks/${id}`, {
+        const res = await axios.get(`https://task-management-system-xx1b.onrender.com/api/tasks/${id}`, {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },

@@ -22,7 +22,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/api/tasks", {
+        const res = await axios.get("https://task-management-system-xx1b.onrender.com/api/tasks", {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },
@@ -45,7 +45,7 @@ const Dashboard = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8080/api/tasks", form, {
+      const res = await axios.post(""https://task-management-system-xx1b.onrender.com/api/tasks", form, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -61,7 +61,7 @@ const Dashboard = () => {
   const handleStatusChange = async (id, currentStatus) => {
     try {
       const res = await axios.put(
-        `http://localhost:8080/api/tasks/${id}`,
+        `https://task-management-system-xx1b.onrender.com/api/tasks/${id}`,
         { status: currentStatus === "pending" ? "completed" : "pending" },
         {
           headers: {
@@ -80,7 +80,7 @@ const Dashboard = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this task?")) return;
     try {
-      await axios.delete(`http://localhost:8080/api/tasks/${id}`, {
+      await axios.delete(`https://task-management-system-xx1b.onrender.com/api/tasks/${id}`, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },

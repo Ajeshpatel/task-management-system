@@ -9,10 +9,7 @@ const taskRoutes = require("./routes/taskRoutes");
 dotenv.config();
 const app = express();
 
-app.use(cors({
-    origin: "http://localhost:5173", // Allow only your Vite frontend
-    credentials: true
-  }));
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {

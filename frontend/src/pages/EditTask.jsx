@@ -20,7 +20,7 @@ const EditTask = () => {
   useEffect(() => {
     const fetchTask = async () => {
       try {
-        const res = await axios.get(`http://localhost:8080/api/tasks/${id}`, {
+        const res = await axios.get(`https://task-management-system-xx1b.onrender.com/api/tasks/${id}`, {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },
@@ -52,7 +52,7 @@ const EditTask = () => {
     e.preventDefault();
 
     try {
-      await axios.put(`http://localhost:8080/api/tasks/${id}`, form, {
+      await axios.put(`https://task-management-system-xx1b.onrender.com/api/tasks/${id}`, form, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },

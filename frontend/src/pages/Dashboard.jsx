@@ -24,7 +24,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/api/tasks", {
+        const res = await axios.get("https://task-management-system-xx1b.onrender.com/api/tasks", {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },
@@ -44,7 +44,7 @@ const Dashboard = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8080/api/tasks", form, {
+      const res = await axios.post("https://task-management-system-xx1b.onrender.com/api/tasks", form, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -81,7 +81,7 @@ const Dashboard = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure?")) return;
     try {
-      await axios.delete(`http://localhost:8080/api/tasks/${id}`, {
+      await axios.delete(`https://task-management-system-xx1b.onrender.com/api/tasks/${id}`, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },

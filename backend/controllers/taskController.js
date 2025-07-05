@@ -2,7 +2,11 @@ const Task = require("../models/Task");
 
 // Create New Task
 const createTask = async (req, res) => {
-  const { title, description, dueDate, priority } = req.body;
+  const { title, description, dueDate, priority, category } = req.body;
+
+  if (!category) {
+    return res.status(400).json({ message: "Category is required" });
+  }
 
   try {
     const task = await Task.create({
@@ -11,12 +15,14 @@ const createTask = async (req, res) => {
       description,
       dueDate,
       priority,
+      category,
     });
     res.status(201).json(task);
   } catch (err) {
-    res.status(400).json({ message: "Task creation failed", err });
+    res.status(400).json({ message: "Task creation failed", error: err.message });
   }
 };
+
 
 // Get All Tasks of Logged-in User
 const getTasks = async (req, res) => {

@@ -49,6 +49,10 @@ const TaskDetails = () => {
           <span className="font-semibold">Status:</span>{" "}
           <span className="capitalize">{task.status}</span>
         </p>
+        <p className="mb-4 text-gray-700">
+          <span className="font-semibold">Category:</span>{" "}
+          <span className="capitalize">{task.category}</span>
+        </p>
 
         {/* Buttons */}
         <div className="flex justify-between">

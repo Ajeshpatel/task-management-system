@@ -14,6 +14,7 @@ const EditTask = () => {
     dueDate: "",
     priority: "medium",
     status: "pending",
+    category: "",
   });
 
   // Fetch task data when page loads
@@ -33,6 +34,7 @@ const EditTask = () => {
           dueDate: data.dueDate?.slice(0, 10), // for input type="date"
           priority: data.priority,
           status: data.status,
+          category: data.category,
         });
       } catch (err) {
         console.error("Failed to load task", err);
@@ -105,6 +107,21 @@ const EditTask = () => {
             <option value="medium">Medium</option>
             <option value="high">High</option>
           </select>
+
+          <select
+            name="category"
+            value={form.category}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-2 border rounded"
+          >
+            <option value="">Select Category</option>
+            <option value="Frontend">Frontend</option>
+            <option value="Backend">Backend</option>
+            <option value="React.js">React.js</option>
+            <option value="Database">Database</option>
+          </select>
+
           <select
             name="status"
             value={form.status}
